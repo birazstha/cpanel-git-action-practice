@@ -34,15 +34,14 @@ jobs:
       - name: Create storage link
         run: php artisan storage:link
 
-        - name: Create or update .htaccess file
+      - name: Create or update .htaccess file
         run: |
           cat > public/.htaccess <<EOL
-         <IfModule mod_rewrite.c>
+          <IfModule mod_rewrite.c>
             RewriteEngine On
             RewriteRule ^(.*)$ public/$1 [L]
-            </IfModule>
+          </IfModule>
           EOL
-
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
