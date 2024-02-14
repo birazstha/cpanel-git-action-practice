@@ -9,6 +9,10 @@ on:
       - master
 
 jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -30,14 +34,6 @@ jobs:
     # - name: Run database migrations
     #   run: php artisan migrate --no-interaction
 
-     - name: Create or update .htaccess file
-        run: |
-          cat > public/.htaccess <<EOL
-          <IfModule mod_rewrite.c>
-          RewriteEngine On
-          RewriteRule ^(.*)$ public/$1 [L]
-          </IfModule>
-          EOL
-
+    
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit
