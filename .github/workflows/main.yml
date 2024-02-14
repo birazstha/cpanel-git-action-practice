@@ -34,6 +34,5 @@ jobs:
     # - name: Run database migrations
     #   run: php artisan migrate --no-interaction
 
-    
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit
