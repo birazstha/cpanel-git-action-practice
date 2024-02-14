@@ -9,9 +9,6 @@ on:
       - master
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
