@@ -32,8 +32,11 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
 
   
-      - name: Deploy using FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
+      - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+         server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           server-dir: /git-action-practice
 
