@@ -40,3 +40,9 @@ jobs:
           username: practice@practice.rajphotopasal.com
           password: Biraj@224973
           server-dir: /
+          exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/public/**
+          **/vendor/**
