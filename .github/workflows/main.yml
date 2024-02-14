@@ -37,4 +37,4 @@ jobs:
           server: ftp.rajphotopasal.com
           username: practice@practice.rajphotopasal.com
           password: Biraj@224973
-          server-dir: /git-action-practice
+          server-dir: /
