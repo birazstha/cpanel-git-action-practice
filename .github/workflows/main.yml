@@ -26,13 +26,23 @@ jobs:
 
       - name: Install Composer dependencies
         run: |
-          composer install --ignore-platform-reqs --prefer-dist --no-interaction --no-progress --optimize-autoloader
+          composer install --ignore-platform-reqs
 
       - name: Generate application key
         run: php artisan key:generate
 
       - name: Create storage link
         run: php artisan storage:link
+
+        - name: Create or update .htaccess file
+        run: |
+          cat > public/.htaccess <<EOL
+         <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteRule ^(.*)$ public/$1 [L]
+            </IfModule>
+          EOL
+
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
