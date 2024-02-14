@@ -1,8 +1,10 @@
 name: Deploy Laravel Project on Push
+
 on:
   push:
     branches:
       - master
+
 jobs:
   web-deploy:
     name: Deploy
@@ -32,7 +34,6 @@ jobs:
       - name: Create storage link
         run: php artisan storage:link
 
-      
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -41,8 +42,8 @@ jobs:
           password: Biraj@224973
           server-dir: /
           exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/public/**
-          **/vendor/**
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/public/**
+            **/vendor/**
