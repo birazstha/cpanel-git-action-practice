@@ -3,11 +3,10 @@ name: Laravel CI
 on:
   push:
     branches:
-      - main
       - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   laravel_tests:
@@ -23,7 +22,7 @@ jobs:
         php-version: '8.0'
 
     - name: Install Composer dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress --no-suggest --ignore-platform-reqs
 
     - name: Copy environment file
       run: cp .env.example .env
