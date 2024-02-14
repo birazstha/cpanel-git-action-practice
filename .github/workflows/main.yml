@@ -34,7 +34,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ SERVER }}
-          username: ${{ USERNAME }}
-          password: ${{ PASSWORD }}
+          server: ftp.rajphotopasal.com
+          username: practice@practice.rajphotopasal.com
+          password: #;abu;TMt;-m
           server-dir: /git-action-practice
