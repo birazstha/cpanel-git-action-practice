@@ -33,3 +33,12 @@ jobs:
 
       - name: Deploy using FTP
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
+
+  - name: Deploy using FTP
+  uses: SamKirkland/FTP-Deploy-Action@4.0.0
+  with:
+    server: ${{ secrets.SERVER }}
+    username: ${{ secrets.USERNAME }}
+    password: ${{ secrets.PASSWORD }}
+    server-dir: /git-action-practice
+
