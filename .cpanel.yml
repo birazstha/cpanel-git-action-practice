@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/biraj/my-sites/github-action
+    - /bin/cp * $DEPLOYPATH
