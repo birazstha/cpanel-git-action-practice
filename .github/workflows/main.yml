@@ -3,7 +3,7 @@ name: Deploy Laravel Project on Push
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   web-deploy:
@@ -17,16 +17,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-
-      - name: Copy .env if not exists
-        run: |
-          if [ ! -f .env ]; then
-            cp .env.example .env
-          fi
-
-      - name: Install Composer dependencies
-        run: |
-          composer install --ignore-platform-reqs
 
       - name: Generate application key
         run: php artisan key:generate
