@@ -12,7 +12,7 @@
 
         div>h1 {
             font-size: 3rem;
-            color: red;
+            color: blue;
         }
     </style>
     <title>Document</title>
