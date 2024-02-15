@@ -17,4 +17,15 @@ jobs:
           server: ftp.rajphotopasal.com
           username: practice@practice.rajphotopasal.com
           password: Biraj@224973
+          script: |
+            cd /home/biraj/my-sites/github-action
+            git pull origin master
+            php artisan migrate --force
+            php artisan config:cache
+            php artisan route:cache
+
+      
+
+
+      
   
