@@ -13,3 +13,8 @@ jobs:
      
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.rajphotosspasal.com
+          username: practice@ss.rajphotopasal.com
+          password: Biraj@224ss973
+  
