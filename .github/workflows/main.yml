@@ -3,7 +3,7 @@ name: Deploy Laravel Project on Push
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   web-deploy:
@@ -34,20 +34,12 @@ jobs:
       - name: Create storage link
         run: php artisan storage:link
 
-      - name: Create or update .htaccess file
-        run: |
-            cat > public/.htaccess <<EOL
-            <IfModule mod_rewrite.c>
-              RewriteEngine On
-              RewriteRule ^(.*)$ public/$1 [L]
-            </IfModule>
-            EOL
-            
+           
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.rajphotopasal.com
           username: practice@practice.rajphotopasal.com
           password: Biraj@224973
-          server-dir: /
+          server-dir: /my-sites/github-action
   
