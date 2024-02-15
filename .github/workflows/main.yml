@@ -10,6 +10,9 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+
+     - name: 🚚 Get Latest Code
+      uses: actions/checkout@v3
      
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -17,15 +20,5 @@ jobs:
           server: ftp.rajphotopasal.com
           username: practice@practice.rajphotopasal.com
           password: Biraj@224973
-          script: |
-            cd /home/biraj/my-sites/github-action
-            git pull origin master
-            php artisan migrate --force
-            php artisan config:cache
-            php artisan route:cache
-
-      
-
-
-      
+          server-dir: /my-sites/github-action
   
