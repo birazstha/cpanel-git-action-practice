@@ -35,14 +35,14 @@ jobs:
         run: php artisan storage:link
 
       - name: Create or update .htaccess file
-  run: |
-    cat > public/.htaccess <<EOL
-    <IfModule mod_rewrite.c>
-      RewriteEngine On
-      RewriteRule ^(.*)$ public/$1 [L]
-    </IfModule>
-    EOL
-
+        run: |
+            cat > public/.htaccess <<EOL
+            <IfModule mod_rewrite.c>
+              RewriteEngine On
+              RewriteRule ^(.*)$ public/$1 [L]
+            </IfModule>
+            EOL
+            
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
